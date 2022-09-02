@@ -1,5 +1,5 @@
  <?php 
-     $con = mysqli_connect("localhost", "cookUser", "1234", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "root", "root", "termDB") or die("MySQL 접속 실패!!");
  
      $branchSelect = $_POST["branchSelect"];
      $toolSelect = $_POST["toolSelect"];
