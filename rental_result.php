@@ -1,23 +1,23 @@
  <?php 
-     $con = mysqli_connect("localhost", "root", "root", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "jiwonch", "wldnjs9711!!", "jiwonch") or die("MySQL 접속 실패!!");
  
      $userID = $_POST["userID"];
      $userPW = $_POST["userPW"];
      $branchSelect = $_POST["branchSelect"];
      $toolSelect = $_POST["toolSelect"];
 
-     $idcheck = "select userID, userPW from userTBL where userID='".$userID."' && userPW='".$userPW."' ;";
+     $idcheck = "select userID, userPW from usertbl where userID='".$userID."' && userPW='".$userPW."' ;";
      $idresult = mysqli_query($con, $idcheck);
      $num = mysqli_num_rows($idresult);
-     $toolcheck= "SELECT ".$toolSelect." FROM toolTBL where 연번=(select 연번 FROM branchtbl where 읍면동='".$branchSelect."')";
+     $toolcheck= "SELECT ".$toolSelect." FROM tooltbl where 연번=(select 연번 FROM branchtbl where 읍면동='".$branchSelect."')";
      $checkresult = mysqli_query($con, $toolcheck) or die("올바른 공구와 기관을 선택하세요");
      $updatetool= "update tooltbl set ".$toolSelect."='대여중' where 연번=(select 연번 FROM branchtbl where 읍면동='".$branchSelect."');";
      $insertuser= "insert into rentallist value('".$userID."','".$branchSelect."','".$toolSelect."');";
 
 
-     $con = mysqli_connect("localhost", "cookUser", "1234", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "jiwonch", "wldnjs9711!!", "jiwonch") or die("MySQL 접속 실패!!");
  
-     $sql = "SELECT * FROM branchTBL";
+     $sql = "SELECT * FROM branchtbl";
 
      $column =  mysqli_query($con,"SHOW COLUMNS from tooltbl");
 
@@ -72,7 +72,7 @@
   <div class="header">
     <h2>Rental Service</h2>
   </div>
-    <form method="post" action="https://localhost/rental_result.php">
+    <form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/rental_result.php">
     <div class="RentalService">
     <label>
     <input type="text" placeholder="  아이디" name="userID">

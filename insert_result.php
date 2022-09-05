@@ -1,5 +1,5 @@
  <?php 
-     $con = mysqli_connect("localhost", "root", "root", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "jiwonch", "wldnjs9711!!", "jiwonch") or die("MySQL 접속 실패!!");
  
      $userID = $_POST["userID"];
      $userName = $_POST["userName"];
@@ -7,7 +7,7 @@
      $email = $_POST["email"];
      $mobile = $_POST["mobile"];
  
-   $sql =" INSERT INTO userTBL VALUES ('".$userID."','".$userName."','".$userPW."','".$email."','".$mobile."')";
+   $sql =" INSERT INTO usertbl VALUES ('".$userID."','".$userName."','".$userPW."','".$email."','".$mobile."')";
  
    $ret = mysqli_query($con, $sql);
  
@@ -50,7 +50,7 @@
   <div class="header">
     <h2>Create Account</h2>
   </div>
-    <form method="post" action="https://localhost/insert_result.php">
+    <form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/insert_result.php">
     <div class="CreateAccount">
     <label>
     <input type="text" placeholder="  이름" name="userName">

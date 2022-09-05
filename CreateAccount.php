@@ -36,7 +36,7 @@
 	<div class="header">
 		<h2>Create Account</h2>
 	</div>
-		<form method="post" action="https://localhost/insert_result.php">
+		<form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/insert_result.php">
 		<div class="CreateAccount">
 		<label>
 		<input type="text" placeholder="  이름" name="userName">

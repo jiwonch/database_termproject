@@ -1,7 +1,7 @@
  <?php 
-     $con = mysqli_connect("localhost", "root", "root", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "jiwonch", "wldnjs9711!!", "jiwonch") or die("MySQL 접속 실패!!");
  
-     $sql = "SELECT * FROM branchTBL";
+     $sql = "SELECT * FROM branchtbl";
  	
      $ret = mysqli_query($con, $sql);
      if($ret) { 
@@ -25,7 +25,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
      function login(){
-         var url = "https://localhost/login.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/login.php";
          var name = "login test";
          var option = "width = 350, height = 300, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -33,7 +33,7 @@
 </script>
 <script>
      function CreateAccount(){
-         var url = "https://localhost/CreateAccount.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/CreateAccount.php";
          var name = "CreateAccount test";
          var option = "width = 350, height = 500, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -41,7 +41,7 @@
 </script>
 <script>
      function RentalService(){
-         var url = "https://localhost/rental.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/rental.php";
          var name = "RentalService test";
          var option = "width = 350, height = 500, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -49,7 +49,7 @@
 </script>
 <script>
      function ReturnService(){
-         var url = "https://localhost/return.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/return.php";
          var name = "RentalService test";
          var option = "width = 350, height = 500, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -172,14 +172,14 @@
 	<div class="side">
 	<h4 style="padding:0; color:#672C2C; text-align: center;">카테고리</h4>
 	<div class="category">
-		<a href="https://localhost/branchinfo.php">지점확인<p>	Branch</p></a>
-		<a href="https://localhost/branch.php">공구확인<p>  Tool</p></a>
+		<a href="http://jiwonch.dothome.co.kr/database_termproject/branchinfo.php">지점확인<p>	Branch</p></a>
+		<a href="http://jiwonch.dothome.co.kr/database_termproject/branch.php">공구확인<p>  Tool</p></a>
 		<a href="javascript:RentalService()">대여하기<p>  Rental</p></a>
 		<a href="javascript:ReturnService()">조회 / 반납하기<p>  Return</p></a>
 	</div>
 	</div>
 	<div class="main">
-		<form method="post" action="https://localhost/branchSelect.php">
+		<form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/branchSelect.php">
 		<input type="text" list="branch" name="branchSelect"  placeholder="지점선택">
 		<datalist id="branch">
 			<?php

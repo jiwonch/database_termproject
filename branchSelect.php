@@ -1,7 +1,7 @@
  <?php 
-     $con = mysqli_connect("localhost", "root", "root", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "jiwonch", "wldnjs9711!!", "jiwonch") or die("MySQL 접속 실패!!");
  
-     $sql = "SELECT * FROM branchTBL";
+     $sql = "SELECT * FROM branchtbl";
  	
      $ret = mysqli_query($con, $sql);
      
@@ -15,7 +15,7 @@
 	     }
     $branchSelect = $_POST["branchSelect"];
 
-	  $tool = "SELECT * FROM toolTBL where 연번=(select 연번 FROM branchtbl where 읍면동='".$branchSelect."')";
+	  $tool = "SELECT * FROM tooltbl where 연번=(select 연번 FROM branchtbl where 읍면동='".$branchSelect."')";
  	
      $ret2 = mysqli_query($con, $tool);
      if($ret2) { 
@@ -40,7 +40,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>
      function login(){
-         var url = "https://localhost/login.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/login.php";
          var name = "login test";
          var option = "width = 350, height = 300, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -48,7 +48,7 @@
 </script>
 <script>
      function CreateAccount(){
-         var url = "https://localhost/CreateAccount.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/CreateAccount.php";
          var name = "CreateAccount test";
          var option = "width = 350, height = 500, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -56,7 +56,7 @@
 </script>
 <script>
      function RentalService(){
-         var url = "https://localhost/rental.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/rental.php";
          var name = "RentalService test";
          var option = "width = 350, height = 500, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -64,7 +64,7 @@
 </script>
 <script>
      function ReturnService(){
-         var url = "https://localhost/return.php";
+         var url = "http://jiwonch.dothome.co.kr/database_termproject/return.php";
          var name = "RentalService test";
          var option = "width = 350, height = 500, top = 100, left = 200, location = no"
          window.open(url, name, option);
@@ -187,14 +187,14 @@
 	<div class="side">
 	<h4 style="padding:0; color:#672C2C; text-align: center;">카테고리</h4>
 	<div class="category">
-		<a href="https://localhost/branchinfo.php">지점확인<p>	Branch</p></a>
-		<a href="https://localhost/branch.php">공구확인<p>  Tool</p></a>
+		<a href="http://jiwonch.dothome.co.kr/database_termproject/branchinfo.php">지점확인<p>	Branch</p></a>
+		<a href="http://jiwonch.dothome.co.kr/database_termproject/branch.php">공구확인<p>  Tool</p></a>
 		<a href="javascript:RentalService()">대여하기<p>  Rental</p></a>
 		<a href="javascript:ReturnService()">조회 / 반납하기<p>  Return</p></a>
 	</div>
 	</div>
 	<div class="main">
-		<form method="post" action="https://localhost/branchSelect.php">
+		<form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/branchSelect.php">
 		<input type="text" list="branch" name="branchSelect"  placeholder="지점선택">
 		<datalist id="branch">
 			<?php
@@ -215,19 +215,19 @@
   				 	while($row = mysqli_fetch_array($ret2)) {
 
        echo "<TR>";
-       echo "<TD><img src='https://localhost/전동드릴.jpg'><h5>전동드릴</h5>", $row['전동드릴'], "</TD>";
-       echo "<TD><img src='https://localhost/직소기.jpg'><h5>직소기</h5>", $row['직소기'], "</TD>";
-       echo "<TD><img src='https://localhost/타카.jpg'><h5>타카</h5>", $row['타카'], "</TD>";
-       echo "<TD><img src='https://localhost/펜치.jpg'><h5>펜치</h5>", $row['펜치'], "</TD>";
-       echo "<TD><img src='https://localhost/파이프렌치.jpg'><h5>파이프렌치</h5>", $row['파이프렌치'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/전동드릴.jpg'><h5>전동드릴</h5>", $row['전동드릴'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/직소기.jpg'><h5>직소기</h5>", $row['직소기'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/타카.jpg'><h5>타카</h5>", $row['타카'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/펜치.jpg'><h5>펜치</h5>", $row['펜치'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/파이프렌치.jpg'><h5>파이프렌치</h5>", $row['파이프렌치'], "</TD>";
        echo "</TR>";
 
        echo "<TR>";
-       echo "<TD><img src='https://localhost/니퍼.jpg'><h5>니퍼</h5>", $row['니퍼'], "</TD>";
-       echo "<TD><img src='https://localhost/몽키스패너.jpg'><h5>몽키스패너</h5>", $row['몽키스패너'], "</TD>";
-       echo "<TD><img src='https://localhost/톱.jpg'><h5>톱</h5>", $row['톱'], "</TD>";
-       echo "<TD><img src='https://localhost/공구세트.jpg'><h5>공구세트</h5>", $row['공구세트'], "</TD>";
-       echo "<TD><img src='https://localhost/절단기.jpg'><h5>절단기</h5>", $row['절단기'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/니퍼.jpg'><h5>니퍼</h5>", $row['니퍼'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/몽키스패너.jpg'><h5>몽키스패너</h5>", $row['몽키스패너'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/톱.jpg'><h5>톱</h5>", $row['톱'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/공구세트.jpg'><h5>공구세트</h5>", $row['공구세트'], "</TD>";
+       echo "<TD><img src='http://jiwonch.dothome.co.kr/database_termproject/절단기.jpg'><h5>절단기</h5>", $row['절단기'], "</TD>";
        echo "</TR>";
     }
     ?>

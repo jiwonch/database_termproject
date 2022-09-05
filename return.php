@@ -36,7 +36,7 @@
   <div class="header">
     <h2>Return Service</h2>
   </div>
-    <form method="post" action="https://localhost/return_result.php">
+    <form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/return_result.php">
     <div class="RentalService">
     <label>
     <input type="text" placeholder="  아이디" name="userID">

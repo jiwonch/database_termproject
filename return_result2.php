@@ -1,5 +1,5 @@
  <?php 
-     $con = mysqli_connect("localhost", "root", "root", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "jiwonch", "wldnjs9711!!", "jiwonch") or die("MySQL 접속 실패!!");
  
      $branchSelect = $_POST["branchSelect"];
      $toolSelect = $_POST["toolSelect"];
@@ -53,7 +53,7 @@
   <div class="header">
     <h2>Return Service</h2>
   </div>
-    <form method="post" action="https://localhost/return_result.php">
+    <form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/return_result.php">
     <div class="RentalService">
     <label>
     <input type="text" placeholder="  아이디" name="userID">

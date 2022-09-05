@@ -1,12 +1,12 @@
  <?php 
-     $con = mysqli_connect("localhost", "root", "root", "termDB") or die("MySQL 접속 실패!!");
+     $con = mysqli_connect("localhost", "jiwonch", "wldnjs9711!!", "jiwonch") or die("MySQL 접속 실패!!");
  
      $userID = $_POST["userID"];
      $userPW = $_POST["userPW"];
      $rentalcheck = "select 읍면동, tool from rentallist where userid='".$userID."';";
      $rentalresult = mysqli_query($con, $rentalcheck);
 
-     $idcheck = "select userID, userPW from userTBL where userID='".$userID."' && userPW='".$userPW."' ;";
+     $idcheck = "select userID, userPW from usertbl where userID='".$userID."' && userPW='".$userPW."' ;";
      $idresult = mysqli_query($con, $idcheck);
      $num = mysqli_num_rows($idresult)
 
@@ -51,7 +51,7 @@
   <div class="header">
     <h2>Return Service</h2>
   </div>
-    <form method="post" action="https://localhost/return_result.php">
+    <form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/return_result.php">
     <div class="ReturnService">
     <label>
     <input type="text" placeholder="  아이디" name="userID">
@@ -70,7 +70,7 @@
       }
       ?>
     </div>
-    <form method="post" action="https://localhost/return_result2.php" class="ReturnService">
+    <form method="post" action="http://jiwonch.dothome.co.kr/database_termproject/return_result2.php" class="ReturnService">
      <h3>회원님이 대여중인 상품</h3>
 
     <?php
